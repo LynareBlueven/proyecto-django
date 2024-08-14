@@ -1,0 +1,40 @@
+{%extends "inicio/encabezado.html"%}
+{%block titulo%} Contacto {%endblock%}
+{%block imagen%} 
+  {%load static%} 
+  {%static 'inicio/images/contacto.png'%}
+{%endblock%} 
+
+{% block menu%}
+  Contactanos<span>Mensaje</span>
+{%endblock%}
+
+{%block encabezado%}
+<!-- Contenido Principal-->
+
+  <!--Encabezdo -->
+  <div class="page-header">
+    <div class="page-title">
+      <h3>Registro <small>Ingresa tu información</small></h3>
+    </div>
+  </div>
+  <!-- /Encabezado-->
+{%endblock%}
+
+{%block bar%}
+{%endblock%}
+
+{%block contenido%}
+
+<form method="POST">
+    {% csrf_token %}
+<div class="callout callout-danger fade in">
+    <h5>Eliminando Comentario</h5>
+    <p>¿Está seguro de <strong>ELIMINAR</strong> este comentario?</p>
+</div>
+
+<button type="submit" class="btn btn-danger">Confirmar</button>
+<a href="{%url 'Comentarios' %}" class="btn btn-primary">Cancelar</a>
+</form>
+
+{%endblock%}
